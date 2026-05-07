@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "contractreview"
+version = "0.1.0"
+description = "Find contracts and lawsuits across SEC EDGAR, PACER, and CourtListener; route them into GC AI for risk-disclosure mapping."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "ContractReview contributors" }]
+keywords = ["sec", "edgar", "pacer", "courtlistener", "recap", "gc-ai", "legal", "contracts"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Legal Industry",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial",
+]
+dependencies = [
+    "requests>=2.31.0",
+    "beautifulsoup4>=4.12.0",
+]
+
+[project.optional-dependencies]
+# The Streamlit GUI is optional — backend integrators consuming the
+# clients programmatically don't need it.
+gui = ["streamlit>=1.32.0", "pandas>=2.0.0"]
+# Alternative NiceGUI front-end (matches gc.ai's chrome more closely).
+# Install one OR the other depending on which app you run.
+nicegui = ["nicegui>=2.0.0"]
+dev = ["pyflakes", "pytest"]
+
+[project.scripts]
+# CLI entry point for the SEC scanner. PACER and CourtListener are
+# GUI-driven; backend code should import the clients directly.
+contractreview-sec = "sec_contract_scanner:main"
+
+[tool.setuptools]
+# Modules-style layout (single-file modules at the repo root). When the
+# project grows we can move to a package with [tool.setuptools.packages.find].
+py-modules = [
+    "sec_contract_scanner",
+    "pacer_client",
+    "courtlistener_client",
+    "gc_triage",
+]

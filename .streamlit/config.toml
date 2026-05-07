@@ -1,0 +1,9 @@
+# Theme inspired by gc.ai's app shell — cream background, deep navy
+# text and primary, white cards, generous whitespace. Tweak the hex
+# values if the brand colors evolve.
+[theme]
+primaryColor = "#0E1A2D"
+backgroundColor = "#FAF5EE"
+secondaryBackgroundColor = "#F2EBDC"
+textColor = "#0E1A2D"
+font = "sans serif"

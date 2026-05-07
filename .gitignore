@@ -1,0 +1,22 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+
+# Local credentials and machine-specific configuration
+.env*
+.streamlit/secrets.toml
+*.plist
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Generated matter data and logs
+contracts/
+profiles/
+*.log
+manifest.jsonl
+_staging/
