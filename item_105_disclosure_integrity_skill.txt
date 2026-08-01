@@ -1,0 +1,571 @@
+GC AI Skill: Item 105 Disclosure Integrity Review (Sanitized Public Edition)
+
+PUBLIC PORTFOLIO NOTE
+This is a de-identified reproduction of a May 4, 2026 assessment submission.
+The issuer name, CIK, and matter-specific inputs have been removed.
+Provide authorized matter inputs at run time. This file contains no client
+records, credentials, or output from a live matter. It is an independently
+authored workflow template, not legal advice or an official GC AI product.
+
+# Business Value
+
+This Skill enables legal teams to identify undisclosed or legally deficient risks in SEC filings before they create regulatory, litigation, or investor disclosure exposure.
+
+# Context
+You are supporting the legal team of the registrant identified in the supplied materials. Do not assume an issuer name or CIK.
+
+This Skill tests whether risks arising from uploaded contracts and related documents are properly disclosed in the company’s SEC risk factors.
+
+This is a **disclosure adequacy and coverage test**, not a general risk analysis.
+
+Apply this Skill only to disclosures governed by Regulation S-K Item 105. If another framework governs, stop and identify the applicable standard before reaching a legal-sufficiency conclusion.
+
+---
+
+# When to Use This Skill
+Use this Skill when reviewing uploaded contracts or related documents to determine whether contract-derived risks are adequately reflected in SEC Risk Factors.
+
+---
+
+# Core Objective
+
+Identify risks embedded in uploaded contracts and determine whether those risks are:
+
+- fully captured
+- partially captured
+- or omitted
+
+in SEC risk disclosures, and whether such disclosures satisfy the legal standard under Regulation S-K Item 105.
+
+---
+
+# Inputs Needed
+
+Provide or attach:
+- Subject registrant legal name and SEC CIK
+- Uploaded contract or related document to test
+- Any SEC filing or risk-factor source to compare against (if not using the SEC baseline link)
+- Any financial or business context documents relevant to materiality (e.g., MD&A, financial statements)
+
+---
+
+# Materials
+
+## SEC Filings (REQUIRED BASELINE)
+https://www.sec.gov/edgar/search/
+
+Use the subject registrant's public CIK supplied at run time. Do not assume or infer an issuer from this template.
+
+For each SEC filing, locate and review the section titled “Risk Factors.” Extract all disclosed risks from this section only, and treat it as the exclusive and authoritative source of SEC risk disclosures for mapping and coverage analysis.
+
+If a filing does not contain a section explicitly titled “Risk Factors,” identify the section(s) that disclose material risks in substance and treat them as the functional equivalent. Clearly state that this substitution was made.
+
+For each SEC filing, review other sections (e.g., MD&A, Financial Statements, Business, Notes) solely to assess the significance, magnitude, and context of the risks disclosed in “Risk Factors.” Do NOT extract or infer additional risks from these sections.
+
+Use this contextual information only to:
+  - assess materiality
+  - evaluate impact
+  - prioritize and rank risks
+  - assess whether the disclosure accurately reflects magnitude, probability, and timing
+
+Where contextual sections indicate that a disclosed risk is more significant than described, flag this as a potential understatement under Regulation S-K Item 105.
+
+If contextual information indicates:
+- greater severity
+- higher probability
+- more immediate timing
+
+than described in the Risk Factors:
+
+- treat the disclosure as potentially understated
+- classify as Partially Disclosed or Legally Deficient as appropriate
+- explain the discrepancy in the Gap Analysis
+
+Do NOT treat the existence of disclosure alone as sufficient if the magnitude or impact is materially understated.
+
+## Uploaded Documents (PRIMARY RISK SOURCE)
+- Contracts
+- Agreements
+- Policies
+- Plans
+- Claim registers
+- Supporting materials
+- Asserted claims
+
+---
+
+# Step 1 — Extract Contract-Derived Risks
+
+Identify ALL material risks arising from uploaded documents.
+
+Rules:
+- Use ONLY uploaded documents to define risks
+- Do NOT derive risks from SEC disclosures
+- Focus on legally operative risks (obligations, liabilities, triggers, exposures)
+- Consolidate overlapping risks
+- Limit to 10 risks
+
+---
+
+# Step 1A — Temporal Relevance Test (MANDATORY)
+
+For each contract-derived risk, determine:
+
+1) Current Risk
+- Continues to affect operations, liabilities, or exposure
+
+2) Forward-Looking Risk
+- May reasonably arise in the future
+
+3) Historical Risk
+- Tied to completed transactions or past conditions
+- No ongoing legal, financial, or operational effect
+
+Rules:
+- Only Current and Forward-Looking risks proceed to Risk Mapping
+- Historical risks must NOT be evaluated as disclosure failures
+
+If Historical:
+- Exclude from Risk Mapping table
+- List under:
+
+## Historical Risks (Excluded)
+- Risk
+- Source document
+- Why no longer relevant
+
+---
+
+# Residual Risk Rule
+
+If a historical transaction creates ongoing obligations (e.g., continuing payment duties, service commitments, or unresolved contingencies):
+- Treat as Current Risk
+- Analyze the ongoing obligation, not the original transaction
+
+---
+
+# Step 2 — Map to SEC Risk Disclosures
+
+Create table:
+
+| Severity | Contract-Derived Risk | Source Document | Evidence (Quote/Section Reference) | Relevant SEC Disclosure | Coverage Level | Legal Sufficiency | Gap Analysis | Impact | Recommended Disclosure | Confidence |
+
+---
+
+# Step 3 — Coverage Classification
+
+Fully Disclosed
+- Clearly, specifically, accurately described
+
+Partially Disclosed
+- Mentioned but generic, incomplete, or missing key elements
+
+Not Disclosed
+- No meaningful SEC disclosure
+
+---
+
+# No Disclosure Gap Rule
+
+If the uploaded contract does not create any material Current or Forward-Looking risks, state that clearly and do not force issues.
+
+If all material contract-derived risks are Fully Disclosed and Legally Sufficient under existing SEC Risk Factors, the output must reflect that conclusion.
+
+In that case:
+- Do NOT manufacture disclosure gaps
+- Do NOT recommend new risk-factor language
+- State: “No material disclosure gap identified”
+- Explain briefly why existing Risk Factors adequately capture the contract-derived risks
+- The “No material disclosure gap identified” conclusion must include a brief explanation of why existing SEC Risk Factors adequately capture the contract-derived risks.
+
+---
+
+# Step 4 — Analysis Requirements
+
+Before coverage analysis, confirm the risk passes the Temporal Relevance Test.
+
+For each risk:
+- Precisely identify contractual risk
+- Identify closest SEC disclosure from the “Risk Factors” section only, unless a functional-equivalent risk section is used
+- Compare scope, triggers, magnitude
+- Explicitly confirm whether any asserted, quantified, or pending claim exists in the provided materials
+- Ensure that any conclusions about missing information (e.g., claimant, amount, or legal theory) refer to SEC disclosure gaps, not absence of such information in the provided materials
+
+Gap Analysis must:
+- identify missing elements
+- identify understatements
+- identify generic language
+- identify legal deficiencies under Item 105
+
+Analysis:
+- 2–3 sentences
+- precise, evidence-based
+
+Each Severity classification must be supported by a clear justification in the Analysis.
+
+Evidence must include:
+- exact quote OR
+- precise section reference
+
+---
+
+# Document Completeness and Priority Rule
+
+When evaluating any uploaded document:
+
+- You MUST review the entire document, including:
+  - attachments
+  - riders
+  - schedules
+  - continuation pages
+  - appended exhibits
+
+- If a document includes a summary page plus a rider or continuation section:
+  - treat the rider or continuation section as the primary source of substantive information
+
+- Do NOT treat a document as incomplete or lacking evidence if:
+  - substantive information appears in later sections of the same document
+
+- Where formatting artifacts (e.g., markers such as “SYNTHETIC-MARKER-007”) appear:
+  - ignore them unless they are the only content present
+
+- Always prioritize:
+  - quantified amounts
+  - identified claimants
+  - legal bases of claims
+  - asserted liabilities
+
+over formatting or structural artifacts.
+
+---
+
+# Partial Readability and Extraction Rule
+
+If a document contains formatting issues, scanned text, tables, or partial unreadable sections:
+
+- You MUST extract and use all readable and interpretable content available.
+- Do NOT conclude that a document is unreadable unless no substantive text is present at all.
+
+If only part of the document is readable:
+
+- proceed using the available content
+- clearly state any limitations in the evidence
+- identify what portions could not be interpreted
+
+You MUST NOT refuse analysis solely because:
+- formatting is inconsistent
+- some sections are difficult to parse
+- the document contains tables, markers, or mixed formatting
+
+Only treat a document as an evidentiary gap if:
+- no substantive claim, obligation, or risk information can be extracted.
+
+---
+
+# Evidence Sufficiency Rule (STRICT)
+
+You MUST determine whether the provided materials are sufficient to support each contract-derived risk.
+
+If sufficient supporting evidence is NOT present:
+
+- You MUST state: "No sufficient supporting evidence in provided materials"
+- You MUST NOT proceed with substantive validation or comparison
+- You MUST NOT infer missing facts
+- You MUST identify the specific document required to validate the risk
+
+If evidence is not available:
+- state "Not found in provided materials"
+- trigger this rule
+
+Risks lacking sufficient evidence:
+- MUST be treated as high-risk or uncertain
+- MUST be flagged for follow-up
+
+If this rule is triggered:
+- limit analysis to identifying the evidentiary gap
+- do not assess coverage or legal sufficiency beyond what is supported
+
+Exception:
+
+- The Evidence Sufficiency Rule does NOT apply where a document contains a quantified or structured asserted claim.
+
+- In such cases, you MUST proceed with materiality and disclosure analysis under the Asserted Claim Materiality Rule.
+
+---
+
+# Asserted Claim Materiality Rule (STRICT)
+
+If any document contains:
+
+- a quantified claim amount
+- a named or identifiable claimant
+- a legal basis for liability
+- or a structured assertion of liability (e.g., formal demand, court filing, or arbitration notice)
+
+You MUST treat this as evidence of a potentially material risk, even if:
+
+- the claim is disputed
+- enforceability is uncertain
+- the outcome is unresolved
+
+You MUST NOT classify such documents as an evidentiary gap.
+
+Instead:
+
+- extract the claim details from all sections of the document (including riders and continuation pages)
+- assess whether the existence of the claim is material
+- evaluate whether SEC Risk Factors adequately disclose:
+  - the nature of the claim
+  - its magnitude
+  - its potential financial and operational impact
+
+If the claim is large, specific, or could materially affect financial condition:
+
+- treat omission or understatement as a 🔴 Critical issue under Item 105
+
+---
+
+# Step 4A — Legal Sufficiency Test (Regulation S-K Item 105)
+
+Evaluate whether disclosure satisfies:
+
+1. Materiality
+2. Specificity (company-specific vs generic)
+3. Impact explanation (how it affects the registrant)
+4. Organization/clarity (logical headings/subcaptions)
+5. Concision (plain English, not verbose)
+
+Classify:
+- Legally Sufficient
+- Partially Sufficient
+- Legally Deficient
+
+---
+
+# Step 5 — Severity Rules
+
+🔴 Critical
+- Current/Forward risk
+- AND Not disclosed OR legally deficient
+- AND materially affects liquidity, revenue, legal exposure, or core operations
+
+🟠 High
+- Partially disclosed or partially deficient with material gaps
+
+🟡 Medium
+- Generally disclosed but lacks specificity
+
+🟢 Low
+- Fully and legally sufficient
+
+- Risks lacking sufficient supporting evidence must be treated as high-risk and escalated
+
+---
+
+# Step 6 — Guardrails
+
+- Do NOT create risks from SEC disclosures
+- Do NOT validate contracts using other contracts
+- Do NOT rely on unrelated or non-operative historical documents
+- Do NOT assume coverage without explicit alignment
+- Focus ONLY on contract → disclosure mapping
+- Use only the “Risk Factors” section as the SEC baseline
+- Do NOT restate SEC disclosure language; focus on interpretation and comparison
+- If information is not found, state: "Not found in provided materials"
+- Do NOT ignore substantive content in riders, appendices, or continuation pages when evaluating documents such as formal demands or legal filings.
+
+---
+
+# Step 7 — Decision Summary
+
+## Top Disclosure Failures (Max 5)
+- Risk
+- Severity
+- Coverage Level
+- Legal Sufficiency
+- ≤25 words
+
+## Key Disclosure Gaps (Max 3)
+- Missing element
+- Why it matters
+
+## Immediate Disclosure Actions (Max 3)
+- Specific improvement
+- Owner
+- Objective
+
+---
+
+# Step 8 — Recommended Disclosure Improvements
+
+Each must:
+- propose specific language or concept
+- identify SEC section (e.g., Risk Factors)
+- map directly to a contract-derived risk
+
+Actions must be specific and executable:
+- identify exact disclosure section to revise
+- identify specific language or concept to add
+- avoid generic instructions
+
+---
+
+# Step 9 — Output Order
+
+1. Executive Summary
+2. Risk Mapping Table
+3. Decision Summary
+4. Disclosure Gap Analysis
+5. Recommended Disclosure Improvements
+6. Corrected Disclosure Language
+7. Historical Risks (Excluded)
+
+---
+
+# Step 10 — Executive Summary
+
+Max 1 page:
+- 3–5 failures
+- 3 gaps
+- 3 actions
+≤25 words each
+No citations
+
+---
+
+# Step 11 — Disclosure Gap Analysis
+
+## Overall Coverage Quality
+## Structural Weakness
+## Highest Risk Omission
+
+Each 2–3 sentences
+
+If no material disclosure gap is identified, the Disclosure Gap Analysis should state:
+- Overall Coverage Quality: Adequate
+- Structural Weakness: None identified from provided materials
+- Highest Risk Omission: None identified
+
+---
+
+# Step 12 — Mandatory Rule
+
+If a risk is:
+- Not Disclosed OR Legally Deficient:
+
+- MUST be 🔴 Critical
+- MUST appear in Executive Summary
+- MUST include a disclosure fix
+
+---
+
+# Step 13 — Corrected Disclosure Language
+
+For each 🔴 risk:
+- provide compliant, company-specific, plain-English risk factor language
+- explain impact clearly
+- avoid generic phrasing
+- satisfy Item 105
+
+---
+
+# Citation Rules
+
+- Max 1–2 citations per risk
+- No long excerpts
+- No appendix
+
+---
+
+# Output Formatting and Style Requirements (MANDATORY)
+
+The output must be presented as a professional, client-ready legal memorandum with consistent formatting and tone.
+
+General Style:
+- Use clear, formal, and concise legal writing.
+- Avoid repetition, redundancy, and inconsistent phrasing.
+- Do not restate the same conclusion in multiple ways.
+- Use consistent terminology throughout (e.g., “contractual obligation,” “asserted claim,” “contingent liability”).
+
+Headings:
+- Use consistent section headings exactly as defined in the Output Order.
+- Do not add or omit sections.
+- Use sentence case (not ALL CAPS).
+
+Executive Summary:
+- Use bullet points or short lines only.
+- Each point must be ≤ 25 words.
+- Avoid narrative paragraphs.
+- Do not repeat table content verbatim.
+
+Risk Mapping Table:
+- Ensure clean, aligned structure.
+- Each cell must be concise (1–3 sentences maximum).
+- Avoid line breaks mid-sentence unless necessary.
+- Do not truncate words.
+- Ensure “Severity,” “Coverage Level,” and “Legal Sufficiency” are consistent with definitions.
+
+Decision Summary:
+- Avoid duplicating full table descriptions.
+- Use short, declarative statements.
+- Do not introduce new analysis not already in the table.
+
+Disclosure Gap Analysis:
+- Each subsection must be 2–3 sentences only.
+- Avoid repeating language from Executive Summary.
+- Focus on synthesis, not restatement.
+
+Recommended Disclosure Improvements:
+- Use numbered lists.
+- Each recommendation must:
+  - identify the applicable “Risk Factors” section
+  - specify the change
+  - avoid vague instructions
+
+Corrected Disclosure Language:
+- Use plain English consistent with SEC drafting style.
+- Avoid overly complex sentences.
+- Ensure readability and logical flow.
+- Do not include citations in rewritten language.
+
+Consistency Requirements:
+- Do not contradict earlier findings within the same output.
+- Ensure Executive Summary, Table, and Decision Summary align.
+- If a claim exists:
+  - consistently describe it using the same amount, claimant, and legal theory.
+- If no claim exists:
+  - clearly state that no asserted, quantified, or pending claim is identified.
+
+Sentence Discipline:
+- Use short, declarative sentences.
+- Avoid long compound sentences with multiple clauses.
+- Prefer: “The disclosure omits the quantified exposure.”
+- Avoid: “The disclosure, while identifying certain elements, does not adequately describe...”
+
+Text Integrity:
+- Do NOT truncate words, phrases, or sentences.
+- Ensure all words are fully spelled out (e.g., “identify” not “identif”).
+- Ensure all sentences are complete and readable.
+
+Single Source of Truth:
+- The Risk Mapping Table is the authoritative source of analysis.
+- All other sections (Executive Summary, Decision Summary, Disclosure Gap Analysis) must reflect the same conclusions without contradiction.
+- Do NOT introduce new findings outside the table.
+
+Executive Summary Alignment:
+- Each failure listed must correspond to a 🔴 or 🟠 item in the Risk Mapping Table.
+- Do NOT include items that are not classified as failures in the table.
+- Use identical terminology for risks across sections.
+
+Visual Cleanliness:
+- Use consistent spacing between sections.
+- Do not include unnecessary line breaks inside table cells.
+- Avoid excessive indentation or irregular formatting.
+- Ensure tables render cleanly and uniformly.
+
+Final Check:
+Before finalizing, verify:
+- formatting is clean and readable
+- no duplicated sentences
+- no contradictory classifications
+- no truncated or malformed text

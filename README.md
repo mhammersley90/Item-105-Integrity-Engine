@@ -2,7 +2,7 @@
 
 A de-identified, runnable evidence-builder for an Item 105 disclosure-integrity workflow. It assembles SEC contracts and disclosure baselines, retrieves public litigation materials, extracts structured claim signals, preserves source metadata, and packages the resulting workspace for human-reviewed disclosure analysis.
 
-The public tree contains the deterministic acquisition, normalization, and triage layer. The Item 105 decision playbook runs as a separate GC AI Skill and is not included here. This application prepares and audits the evidence for the workflow; it does not, by itself, render a legal conclusion.
+The public tree contains the deterministic acquisition, normalization, and triage layer together with a sanitized copy of the Item 105 decision playbook. The included Skill definition is designed to run as a separate execution context inside GC AI. The application prepares and audits the evidence; the Skill structures the analysis, which remains subject to human legal review.
 
 Core workflow: `source document -> preserved evidence -> exposure signal -> disclosure baseline -> gap-review workspace -> counsel action`.
 
@@ -13,6 +13,7 @@ Core workflow: `source document -> preserved evidence -> exposure signal -> disc
 - `disclosure_sections.py`: deterministic extraction of Risk Factors, MD&A, and financial-statement baselines.
 - `claim_extractor.py`: structured asserted-claim signals from public docket text.
 - `pacer_client.py` and `courtlistener_client.py`: public-litigation discovery and retrieval.
+- [`item_105_disclosure_integrity_skill.txt`](item_105_disclosure_integrity_skill.txt): sanitized public version of the Item 105 disclosure-integrity playbook delivered with the May 4, 2026 assessment.
 - `WIREFRAME.md`: architecture, system boundary, and the complete handoff model.
 
 > **Public portfolio note:** This is a sanitized current-state edition. It contains synthetic examples only and excludes client records, credentials, private branches, and private development history. The internal component name `ContractReview` remains in module and command names because that component performs evidence acquisition for the broader Item 105 workflow.
