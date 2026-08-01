@@ -1,10 +1,21 @@
-# ContractReview
+# Item 105 Integrity Engine - Public Portfolio Edition
 
-A Streamlit app and CLI for finding contracts in federal records.
+A de-identified, runnable evidence-builder for an Item 105 disclosure-integrity workflow. It assembles SEC contracts and disclosure baselines, retrieves public litigation materials, extracts structured claim signals, preserves source metadata, and packages the resulting workspace for human-reviewed disclosure analysis.
 
-> **Synthetic placeholder data:** All `DEMO_*` tokens, zero identifiers,
-> future dates, filenames, and claim values are placeholders. They do not
-> describe a client, matter, filing, or measured run.
+The public tree contains the deterministic acquisition, normalization, and triage layer. The Item 105 decision playbook runs as a separate GC AI Skill and is not included here. This application prepares and audits the evidence for the workflow; it does not, by itself, render a legal conclusion.
+
+Core workflow: `source document -> preserved evidence -> exposure signal -> disclosure baseline -> gap-review workspace -> counsel action`.
+
+## Included components
+
+- `nicegui_app.py`: one-click workspace orchestration for an issuer.
+- `sec_contract_scanner.py`: EDGAR acquisition, source metadata, manifesting, and optional GC AI handoff.
+- `disclosure_sections.py`: deterministic extraction of Risk Factors, MD&A, and financial-statement baselines.
+- `claim_extractor.py`: structured asserted-claim signals from public docket text.
+- `pacer_client.py` and `courtlistener_client.py`: public-litigation discovery and retrieval.
+- `WIREFRAME.md`: architecture, system boundary, and the complete handoff model.
+
+> **Public portfolio note:** This is a sanitized current-state edition. It contains synthetic examples only and excludes client records, credentials, private branches, and private development history. The internal component name `ContractReview` remains in module and command names because that component performs evidence acquisition for the broader Item 105 workflow.
 
 The tool searches three independent sources, all routing into the same
 staging-and-pick → GC AI upload pipeline:
